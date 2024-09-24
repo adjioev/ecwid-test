@@ -33,11 +33,10 @@ public class IpAddrCounter {
     public long count(String filepath) throws IOException {
         BufferedReader reader =
                 new BufferedReader(new FileReader(filepath));
-
-        String ipString;
         BitSet lowBitSet = new BitSet(Integer.MAX_VALUE);
         BitSet highBitSet = new BitSet(Integer.MAX_VALUE);
 
+        String ipString;
         while ((ipString = reader.readLine()) != null) {
             long ip = convertIpStringToNumber(ipString);
             if (ip <= Integer.MAX_VALUE) {
